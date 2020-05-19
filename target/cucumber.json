@@ -1,0 +1,188 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 79574363400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is at OKR login page",
+            "match": {
+              "location": "HomePageStepDefinition.invokeApplication()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 423817400,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User Enter \"himanshu.kumar@infoprolearning.com\" in Email field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "himanshu.kumar@infoprolearning.com",
+                  "offset": 12
+                }
+              ],
+              "location": "HomePageStepDefinition.user_Enter_in_Email_field(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 156601800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User Enter \"abcd@1234\" in Password field",
+            "match": {
+              "arguments": [
+                {
+                  "val": "abcd@1234",
+                  "offset": 12
+                }
+              ],
+              "location": "HomePageStepDefinition.user_Enter_in_Password_field(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 25142342900,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on Sign In Button",
+            "match": {
+              "location": "HomePageStepDefinition.user_click_on_Sign_In_Button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20011348400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "login should be sucessful",
+            "match": {
+              "location": "HomePageStepDefinition.login_should_be_sucessful()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 76,
+        "name": "Check deleting OKR functionaliuty",
+        "description": "",
+        "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 33972400,
+              "status": "passed"
+            },
+            "line": 69,
+            "name": "User is at OKR Home page",
+            "match": {
+              "location": "CreateOKRDefinition.user_is_at_OKR_Home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 59627246600,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "user click on \"Personal Growth\" edit button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Personal Growth",
+                  "offset": 15
+                }
+              ],
+              "location": "CreateOKRDefinition.user_click_on_edit_button(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2008303200,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "User should be able to navigate to edit OKR page",
+            "match": {
+              "location": "CreateOKRDefinition.user_should_be_able_to_navigate_to_edit_OKR_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 108789426700,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "user delete objective",
+            "match": {
+              "location": "CreateOKRDefinition.user_delete()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 20049912800,
+              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertFalse(Assert.java:64)\r\n\tat org.junit.Assert.assertFalse(Assert.java:74)\r\n\tat stepDefinition.CreateOKRDefinition.objective_should_not_be_visible_at_home_page(CreateOKRDefinition.java:173)\r\n\tat ✽.Then \"Personal Growth\" should not be visible at home page(features/CreateOKR.feature:73)\r\n",
+              "status": "failed"
+            },
+            "line": 73,
+            "name": "\"Personal Growth\" should not be visible at home page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Personal Growth",
+                  "offset": 1
+                }
+              ],
+              "location": "CreateOKRDefinition.objective_should_not_be_visible_at_home_page(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 67,
+            "name": "@Regression"
+          }
+        ]
+      }
+    ],
+    "name": "Create New OKR functionality",
+    "description": "This feature verify to creat a new OKR",
+    "id": "create-new-okr-functionality",
+    "keyword": "Feature",
+    "uri": "features/CreateOKR.feature"
+  }
+]
