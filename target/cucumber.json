@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 79574363400,
+              "duration": 51285550800,
               "status": "passed"
             },
             "line": 5,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 423817400,
+              "duration": 402947400,
               "status": "passed"
             },
             "line": 6,
@@ -41,7 +41,7 @@
           },
           {
             "result": {
-              "duration": 156601800,
+              "duration": 140083300,
               "status": "passed"
             },
             "line": 7,
@@ -59,7 +59,7 @@
           },
           {
             "result": {
-              "duration": 25142342900,
+              "duration": 25096662900,
               "status": "passed"
             },
             "line": 8,
@@ -71,7 +71,7 @@
           },
           {
             "result": {
-              "duration": 20011348400,
+              "duration": 20013377300,
               "status": "passed"
             },
             "line": 9,
@@ -84,19 +84,19 @@
         ]
       },
       {
-        "line": 76,
-        "name": "Check deleting OKR functionaliuty",
+        "line": 91,
+        "name": "Check functionality of viewing and commenting team member\u0027s OKRs",
         "description": "",
-        "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty;;2",
+        "id": "create-new-okr-functionality;check-functionality-of-viewing-and-commenting-team-member\u0027s-okrs;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 33972400,
+              "duration": 9783700,
               "status": "passed"
             },
-            "line": 69,
+            "line": 81,
             "name": "User is at OKR Home page",
             "match": {
               "location": "CreateOKRDefinition.user_is_at_OKR_Home_page()"
@@ -105,75 +105,71 @@
           },
           {
             "result": {
-              "duration": 59627246600,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 70,
-            "name": "user click on \"Personal Growth\" edit button",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Personal Growth",
-                  "offset": 15
-                }
-              ],
-              "location": "CreateOKRDefinition.user_click_on_edit_button(String)"
-            },
-            "matchedColumns": [
-              0
-            ],
+            "line": 82,
+            "name": "User click on Team Managment tab",
+            "match": {},
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 2008303200,
-              "status": "passed"
+              "status": "undefined"
             },
-            "line": 71,
-            "name": "User should be able to navigate to edit OKR page",
-            "match": {
-              "location": "CreateOKRDefinition.user_should_be_able_to_navigate_to_edit_OKR_page()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 108789426700,
-              "status": "passed"
-            },
-            "line": 72,
-            "name": "user delete objective",
-            "match": {
-              "location": "CreateOKRDefinition.user_delete()"
-            },
+            "line": 83,
+            "name": "User search for Other Employee \"Anurag\"",
+            "match": {},
+            "matchedColumns": [
+              0
+            ],
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 20049912800,
-              "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertFalse(Assert.java:64)\r\n\tat org.junit.Assert.assertFalse(Assert.java:74)\r\n\tat stepDefinition.CreateOKRDefinition.objective_should_not_be_visible_at_home_page(CreateOKRDefinition.java:173)\r\n\tat ✽.Then \"Personal Growth\" should not be visible at home page(features/CreateOKR.feature:73)\r\n",
-              "status": "failed"
+              "status": "undefined"
             },
-            "line": 73,
-            "name": "\"Personal Growth\" should not be visible at home page",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Personal Growth",
-                  "offset": 1
-                }
-              ],
-              "location": "CreateOKRDefinition.objective_should_not_be_visible_at_home_page(String)"
+            "line": 84,
+            "name": "User click on view icon and go ahead",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
             },
+            "line": 85,
+            "name": "User should be able to view  \"Anurag\" Objectives",
+            "match": {},
             "matchedColumns": [
               0
             ],
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 86,
+            "name": "User click on Comment button on \"Test Kr\"",
+            "match": {},
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 87,
+            "name": "User should be able to comment on key result",
+            "match": {},
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 67,
+            "line": 79,
             "name": "@Regression"
           }
         ]

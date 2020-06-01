@@ -64,7 +64,7 @@ Examples:
 | Objective | ObjectiveShortDeec | ObjectiveType | AlignManager | key |
 | Automation Framework Implementation | Testing | Aspirational OKR | Himanshu Kumar | POC Complete |
 
-@Regression
+
 Scenario Outline: Check deleting OKR functionaliuty
 Given User is at OKR Home page
 When user click on "<Objective>" edit button
@@ -74,3 +74,20 @@ Then "<Objective>" should not be visible at home page
 Examples:
 | Objective |
 | Personal Growth |
+
+
+ @Regression
+Scenario Outline: Check functionality of viewing and commenting team member's OKRs
+Given User is at OKR Home page
+When User click on Team Managment tab
+And User search for Other Employee "<EmployeeName>"
+And User click on view icon and go ahead
+Then User should be able to view  "<EmployeeName>" Objectives
+And User click on Comment button on "<Objective>"
+Then User should be able to comment on key result
+
+Examples:
+| EmployeeName | Objective |
+|Anurag | TEST kr |
+
+

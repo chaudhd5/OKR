@@ -192,5 +192,49 @@ public class CreateOKRDefinition extends DriverManager {
 		assertTrue(flagTest);
 	}
 
+	@When("^User click on Team Managment tab$")
+	public void user_click_on_Team_Managment_tab() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		createOKRpage.click_TeamManagmentTab();
+		Thread.sleep(2000);
+		String rTitle = driver.getCurrentUrl();
+		Assert.assertTrue(rTitle.contains("/team-management"));
+		System.out.println("User is navigated to Team managment Page sucessfully.");
+		
+	}
+
+	@When("^User search for Other Employee \"([^\"]*)\"$")
+	public void user_search_for_Other_Employee(String EmployeeName) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		createOKRpage.select_Employee(EmployeeName);
+	}
+
+	@When("^User click on view icon and go ahead$")
+	public void user_click_on_view_icon_and_go_ahead() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		createOKRpage.click_GoAhead();
+	}
+
+	@Then("^User should be able to view  \"([^\"]*)\" Objectives$")
+	public void user_should_be_able_to_view_Objectives(String EmployeeName) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		boolean flag = false;
+		flag= createOKRpage.verifyTeamObjectiveView(EmployeeName);
+		assertTrue( "User is able to view team Objectives", flag );
+	}
+
+	@Then("^User click on Comment button on \"([^\"]*)\"$")
+	public void user_click_on_Comment_button_on(String Objective) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		createOKRpage.click_OnComment(Objective);
+	}
+
+	@Then("^User should be able to comment on key result$")
+	public void user_should_be_able_to_comment_on_key_result() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		boolean flag = false;
+		flag =createOKRpage.enter_Comment();
+		assertTrue( "User is able to  comment on key results", flag );
+	}
 
 }

@@ -34,18 +34,41 @@ public class ImportOKRPage extends DriverManager {
 	//================ Create OKR Page Web Elements ====================================================================	
 	 @FindBy(xpath = "//*[@href='/import-previous-okr']") 
 	  private static WebElement btn_ImportPreviousObjective;
+	 
+	 @FindBy(xpath = "//*[@href='/import-team-okr']") 
+	  private static WebElement btn_ImportTeamObjective;
 		
-	 @FindBy(xpath = "//span[text()='Add']")
+	 @FindBy(xpath = "//span[contains(text(),'Add')]")
 	 private static WebElement btn_add;
 
 	  @FindBy(xpath="//button[@type='submit']") 
 	  private static WebElement btn_Save;
+	  
+	  @FindBy(xpath ="//div[@class='MuiExpansionPanelDetails-root']//*[@class='MuiTypography-root MuiFormControlLabel-label MuiTypography-body1']")
+	  private List<WebElement> select_checkBox;
+	  
+	  @FindBy(xpath = "//div[@id='additional-actions1-header'][1]//span[@class='MuiTypography-root MuiFormControlLabel-label MuiTypography-body1']")
+	  private List<WebElement> allElements;
+	  
+	  @FindBy(xpath="//div[@class='key-add-action']/following::input[1]") 
+	  private static WebElement edt_keyResults;
+	  
+	  @FindBy(xpath ="//input[@placeholder ='Search Employee']")
+	  private WebElement edt_searchEmp;
+	  
+	  @FindBy(xpath = "//ul[@id='menu-list-grow']//li[2]")
+	  private WebElement select_searchEmp;
 	  
 	  
 		//=====================================================================================	
 				public void click_ImportOKRLink() {
 					btn_ImportPreviousObjective.click();
 					System.out.println("User is navigated to import previous OKR page");
+				}
+				
+				public void click_ImportTeamOKRLink() {
+					btn_ImportTeamObjective.click();
+					System.out.println("User is navigated to import team OKR page");
 				}
 				
 				public boolean verify_PreviousOKR(String Objective) {
@@ -107,6 +130,79 @@ public class ImportOKRPage extends DriverManager {
 						flag = true;
 						}
 					return flag;
+				}
+				
+				public void check_ManagerOKR(String Objective, String KeyImported) {
+					if (driver.findElements(By.xpath("//*[text()='Your manager is yet to create their OKR.']"))
+							.size() > 0) {
+						System.out.println("Your Manager is yet to set his OKR");
+					} else {
+						for (WebElement ele : allElements) {
+							String str = Objective;
+							if (str.contains(ele.getText())) {
+								//ele.click();			
+								List<WebElement> list = driver.findElements(By.xpath("//span[text()='" + Objective + "']//following::div[1]"));
+								list.get(0).click();
+												
+								 for (WebElement ele1 : select_checkBox) { 
+									 String strkey = KeyImported;
+							
+								 if (strkey.contains(ele1.getText())) { 
+									 ele1.click(); 
+									 break;
+								 }
+									break;
+								 }
+								
+
+								break;
+							}
+						}
+
+					}
+
+				}
+				
+				public void set_KeyValues(String KeyValue) {
+					edt_keyResults.sendKeys(KeyValue);
+				}		
+					
+				public void check_EmployeeOKR(String Objective, String EmployeeName, String KeyImported)
+						throws InterruptedException {
+					edt_searchEmp.sendKeys(EmployeeName);
+					Thread.sleep(20000);
+					select_searchEmp.click();
+					Thread.sleep(25000);
+					if (driver.findElements(By.xpath("//*[text()='Your manager is yet to create their OKR.']"))
+							.size() > 0) {
+						System.out.println("Your Manager is yet to set his OKR");
+					} else {
+						for (WebElement ele : allElements) {
+							String str = Objective;
+							if (str.contains(ele.getText())) {	
+								List<WebElement> list = driver.findElements(By.xpath("//span[text()='" + Objective + "']//following::div[1]"));
+								list.get(0).click();
+												
+								 for (WebElement ele1 : select_checkBox) { 
+									 String strkey = KeyImported;
+							
+								 if (strkey.contains(ele1.getText())) { 
+									 List<WebElement> list1 = driver.findElements(By.xpath("//span[text()='" + KeyImported + "']//parent::label"));
+									int t= list1.size();
+									 list1.get(0).click();
+									// ele1.click(); 
+									 break;
+								 }
+									
+								 }
+								
+
+								break;
+							}
+						}
+
+					}
+
 				}
 
 }

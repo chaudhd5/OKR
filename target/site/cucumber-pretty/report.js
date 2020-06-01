@@ -7,63 +7,75 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "line": 68,
-  "name": "Check deleting OKR functionaliuty",
+  "line": 80,
+  "name": "Check functionality of viewing and commenting team member\u0027s OKRs",
   "description": "",
-  "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty",
+  "id": "create-new-okr-functionality;check-functionality-of-viewing-and-commenting-team-member\u0027s-okrs",
   "type": "scenario_outline",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 67,
+      "line": 79,
       "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 69,
+  "line": 81,
   "name": "User is at OKR Home page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 70,
-  "name": "user click on \"\u003cObjective\u003e\" edit button",
+  "line": 82,
+  "name": "User click on Team Managment tab",
   "keyword": "When "
 });
 formatter.step({
-  "line": 71,
-  "name": "User should be able to navigate to edit OKR page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 72,
-  "name": "user delete objective",
+  "line": 83,
+  "name": "User search for Other Employee \"\u003cEmployeeName\u003e\"",
   "keyword": "And "
 });
 formatter.step({
-  "line": 73,
-  "name": "\"\u003cObjective\u003e\" should not be visible at home page",
+  "line": 84,
+  "name": "User click on view icon and go ahead",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 85,
+  "name": "User should be able to view  \"\u003cEmployeeName\u003e\" Objectives",
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 86,
+  "name": "User click on Comment button on \"\u003cObjective\u003e\"",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 87,
+  "name": "User should be able to comment on key result",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 74,
+  "line": 89,
   "name": "",
   "description": "",
-  "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty;",
+  "id": "create-new-okr-functionality;check-functionality-of-viewing-and-commenting-team-member\u0027s-okrs;",
   "rows": [
     {
       "cells": [
+        "EmployeeName",
         "Objective"
       ],
-      "line": 75,
-      "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty;;1"
+      "line": 90,
+      "id": "create-new-okr-functionality;check-functionality-of-viewing-and-commenting-team-member\u0027s-okrs;;1"
     },
     {
       "cells": [
-        "Personal Growth"
+        "Anurag",
+        "Test Kr"
       ],
-      "line": 76,
-      "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty;;2"
+      "line": 91,
+      "id": "create-new-okr-functionality;check-functionality-of-viewing-and-commenting-team-member\u0027s-okrs;;2"
     }
   ],
   "keyword": "Examples"
@@ -104,7 +116,7 @@ formatter.match({
   "location": "HomePageStepDefinition.invokeApplication()"
 });
 formatter.result({
-  "duration": 79574363400,
+  "duration": 51285550800,
   "status": "passed"
 });
 formatter.match({
@@ -117,7 +129,7 @@ formatter.match({
   "location": "HomePageStepDefinition.user_Enter_in_Email_field(String)"
 });
 formatter.result({
-  "duration": 423817400,
+  "duration": 402947400,
   "status": "passed"
 });
 formatter.match({
@@ -130,114 +142,110 @@ formatter.match({
   "location": "HomePageStepDefinition.user_Enter_in_Password_field(String)"
 });
 formatter.result({
-  "duration": 156601800,
+  "duration": 140083300,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageStepDefinition.user_click_on_Sign_In_Button()"
 });
 formatter.result({
-  "duration": 25142342900,
+  "duration": 25096662900,
   "status": "passed"
 });
 formatter.match({
   "location": "HomePageStepDefinition.login_should_be_sucessful()"
 });
 formatter.result({
-  "duration": 20011348400,
+  "duration": 20013377300,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 76,
-  "name": "Check deleting OKR functionaliuty",
+  "line": 91,
+  "name": "Check functionality of viewing and commenting team member\u0027s OKRs",
   "description": "",
-  "id": "create-new-okr-functionality;check-deleting-okr-functionaliuty;;2",
+  "id": "create-new-okr-functionality;check-functionality-of-viewing-and-commenting-team-member\u0027s-okrs;;2",
   "type": "scenario",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 67,
+      "line": 79,
       "name": "@Regression"
     }
   ]
 });
 formatter.step({
-  "line": 69,
+  "line": 81,
   "name": "User is at OKR Home page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 70,
-  "name": "user click on \"Personal Growth\" edit button",
-  "matchedColumns": [
-    0
-  ],
+  "line": 82,
+  "name": "User click on Team Managment tab",
   "keyword": "When "
 });
 formatter.step({
-  "line": 71,
-  "name": "User should be able to navigate to edit OKR page",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 72,
-  "name": "user delete objective",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 73,
-  "name": "\"Personal Growth\" should not be visible at home page",
+  "line": 83,
+  "name": "User search for Other Employee \"Anurag\"",
   "matchedColumns": [
     0
   ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 84,
+  "name": "User click on view icon and go ahead",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 85,
+  "name": "User should be able to view  \"Anurag\" Objectives",
+  "matchedColumns": [
+    0
+  ],
+  "keyword": "Then "
+});
+formatter.step({
+  "line": 86,
+  "name": "User click on Comment button on \"Test Kr\"",
+  "matchedColumns": [
+    1
+  ],
+  "keyword": "And "
+});
+formatter.step({
+  "line": 87,
+  "name": "User should be able to comment on key result",
   "keyword": "Then "
 });
 formatter.match({
   "location": "CreateOKRDefinition.user_is_at_OKR_Home_page()"
 });
 formatter.result({
-  "duration": 33972400,
+  "duration": 9783700,
   "status": "passed"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "Personal Growth",
-      "offset": 15
-    }
-  ],
-  "location": "CreateOKRDefinition.user_click_on_edit_button(String)"
-});
+formatter.match({});
 formatter.result({
-  "duration": 59627246600,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "location": "CreateOKRDefinition.user_should_be_able_to_navigate_to_edit_OKR_page()"
-});
+formatter.match({});
 formatter.result({
-  "duration": 2008303200,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "location": "CreateOKRDefinition.user_delete()"
-});
+formatter.match({});
 formatter.result({
-  "duration": 108789426700,
-  "status": "passed"
+  "status": "undefined"
 });
-formatter.match({
-  "arguments": [
-    {
-      "val": "Personal Growth",
-      "offset": 1
-    }
-  ],
-  "location": "CreateOKRDefinition.objective_should_not_be_visible_at_home_page(String)"
-});
+formatter.match({});
 formatter.result({
-  "duration": 20049912800,
-  "error_message": "java.lang.AssertionError\r\n\tat org.junit.Assert.fail(Assert.java:86)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat org.junit.Assert.assertFalse(Assert.java:64)\r\n\tat org.junit.Assert.assertFalse(Assert.java:74)\r\n\tat stepDefinition.CreateOKRDefinition.objective_should_not_be_visible_at_home_page(CreateOKRDefinition.java:173)\r\n\tat ✽.Then \"Personal Growth\" should not be visible at home page(features/CreateOKR.feature:73)\r\n",
-  "status": "failed"
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 });

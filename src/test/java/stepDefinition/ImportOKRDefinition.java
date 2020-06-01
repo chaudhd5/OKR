@@ -87,4 +87,38 @@ public void user_should_be_at_create_OKR_page_with_previous_imported_deatils(Str
 }
 
 
+@When("^User clicks on Import Team Objective$")
+public void user_clicks_on_Import_Team_Objective() throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	pageObjectManager = new PageObjectManager(driver);
+	importOKRpage = pageObjectManager.getImportOKRPage();
+	Thread.sleep(3000);
+	importOKRpage.click_ImportTeamOKRLink();
+	Thread.sleep(2000);
+}
+
+
+@When("^User pick objective \"([^\"]*)\" and key \"([^\"]*)\" from his team manager objective$")
+public void user_pick_from_his_team_manager_objective(String Objective, String KeyImported) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	Thread.sleep(4000);
+	importOKRpage.check_ManagerOKR(Objective,KeyImported);
+	Thread.sleep(2000);
+}
+
+
+@Then("^user enter \"([^\"]*)\" results for the objective$")
+public void user_enter_Key_results_for_the_objective(String Keys) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	importOKRpage.set_KeyValues(Keys);
+}
+
+
+@When("^User pick \"([^\"]*)\" and key \"([^\"]*)\" from \"([^\"]*)\" objective$")
+public void user_pick_from_objective(String Objective, String KeyImported,String EmployeeName) throws Throwable {
+    // Write code here that turns the phrase above into concrete actions
+	importOKRpage.check_EmployeeOKR(Objective,EmployeeName,KeyImported);
+	Thread.sleep(2000);
+}
+
 }
